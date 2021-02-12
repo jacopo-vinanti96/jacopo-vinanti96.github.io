@@ -142,10 +142,6 @@ details > summary::-webkit-details-marker {
   display: none;
 }
 
-details p {
-  position: absolute;
-}
-
 details ul {
   position: absolute;
   background-color: white;
@@ -178,7 +174,7 @@ header .top_bar nav:not(.nested_nav) {
   margin-top: 7px;
 }
 
-header .top_bar .hamburger_col {
+header .top_bar .hamburger_col details {
   display: none;
 }
 
@@ -195,8 +191,37 @@ header .top_bar .hamburger_col i {
 
 /* Responsive */
 @media screen and (max-width:991px) {
-  header .top_bar .hamburger_col {
-    display: inline;
+  header .top_bar .hamburger_col details {
+    display: inline-block;
+    padding-top: 7px;
+  }
+
+  header .top_bar .hamburger_col details ul {
+    left: -120px;
+  }
+
+  header .top_bar .hamburger_col details ul a {
+    margin-left: 16px;
+    padding-left: 13px;
+  }
+
+  header .top_bar .hamburger_col details ul button {
+    margin-top: 0;
+    margin-left: 16px;
+    padding-left: 13px;
+    position: relative;
+  }
+
+  header .top_bar .hamburger_col details ul button:hover {
+    text-shadow: 0 0 6px #006AFF;
+  }
+
+  header .top_bar .hamburger_col details ul button::before {
+    content: "\003C";
+    position: absolute;
+    left: -6px;
+    bottom: 4px;
+    font-size: 20px;
   }
 
   header .top_bar .row> *:not(.hamburger_col):not(:first-child) {
