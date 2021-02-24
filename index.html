@@ -1,508 +1,167 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Digitalocean - Home</title>
-  </head>
-  <body>
-    <header>
-      <div class="top_bar navbar navbar-fixed-top">
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-              <img class="logo" src="img/logo.png" alt="Logo Digitalocean">
-            </div>
-            <div class="col-xs-5 col-lg-6 main_nav">
-              <nav class="text-center">
-                <ul class="list-inline">
-                  <li>
-                    <nav class="nested_nav">
-                      <details>
-                        <summary>Products <i class="fas fa-angle-down"></i></summary>
-                        <ul>
-                          <li><a href="">Droplets</a></li>
-                          <li><a href="">Kubernetes</a></li>
-                          <li><a href="">Add platform</a></li>
-                          <li><a href="">Database</a></li>
-                        </ul>
-                      </details>
-                    </nav>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Customers
-                    </a>
-                  </li>
-                  <li>
-                    <nav class="nested_nav">
-                      <details>
-                        <summary>Community <i class="fas fa-angle-down"></i></summary>
-                        <ul>
-                          <li><a href="">Overview</a></li>
-                          <li><a href="">Tutorials</a></li>
-                          <li><a href="">Q&A</a></li>
-                          <li><a href="">Tools</a></li>
-                        </ul>
-                      </details>
-                    </nav>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Pricing
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div class="col-xs-4 secondary_nav">
-              <nav class="text-right">
-                <ul class="list-inline">
-                  <li>
-                    <a href="#">
-                      Docs
-                    </a>
-                  </li>
-                  <li>
-                    <nav class="nested_nav">
-                      <details>
-                        <summary>Support <i class="fas fa-angle-down"></i></summary>
-                        <ul>
-                          <li class="text-center"><a href="">Help</a></li>
-                          <li class="text-center"><a href="">Help</a></li>
-                          <li class="text-center"><a href="">Help</a></li>
-                          <li class="text-center"><a href="">Help</a></li>
-                        </ul>
-                      </details>
-                    </nav>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Login
-                    </a>
-                  </li>
-                  <li>
-                    <a class="signup_btn" href="#">
-                      Sign up
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div class="col-xs-6 col-sm-8 col-md-0 hamburger_col text-right">
-              <details>
-                <summary><i class="fas fa-bars textb_color"></i></summary>
-                <ul class="list-unstyled text-left">
-                  <li><button>Products</button></li>
-                  <li><a href="#">Customers</a></li>
-                  <li><button>Community</button></li>
-                  <li><a href="#">Pricing</a></li>
-                  <li><a href="#">Docs</a></li>
-                  <li><button>Support</button></li>
-                  <li><a href="#">Login</a></li>
-                  <li><a href="#">Sign up</a></li>
-                </ul>
-              </details>
-            </div>
-          </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Spotify - COPIA</title>
+</head>
+<body>
+  <main class="app-view">
+    <aside class="side-bar">
+      <header class="side-bar__header">
+        <img class="logo text--wcolor" src="img/logo.svg" alt="logo">
+        <img class="logo-mobile" src="img/logo-small.svg" alt="logo">
+        <nav>
+          <ul>
+            <li class="side-bar__header__nav-item"><a class="btn_link flex-align-middle" href="#"><img src="img/home.svg" alt="Home icon"><span class="mobile-d-none">Home</span></a></li>
+            <li class="side-bar__header__nav-item"><button class="btn_function flex-align-middle" type="button" name="button"><img src="img/search.svg" alt="search icon"><span class="mobile-d-none">Cerca</span></button></li>
+            <li class="side-bar__header__nav-item"><a class="btn_link flex-align-middle" href="#"><img src="img/libreria.svg" alt="library icon"><span class="mobile-d-none">La mia libreria</span></a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="side-bar__playlist mobile-d-none">
+        <h3 class="playlist--title">Playlist</h3>
+        <button class="btn_function btn_function--playlist-creation flex-align-middle" type="button" name="button"><span class="plus-square">+</span>Crea Playlist</button>
+        <ul>
+          <li><a class="btn_link d-block" href="#">Nome Playlist</a></li>
+          <li><a class="btn_link d-block" href="#">Nome Playlist</a></li>
+          <li><a class="btn_link d-block" href="#">Nome Playlist</a></li>
+          <li><a class="btn_link d-block" href="#">Nome Playlist</a></li>
+          <li><a class="btn_link d-block" href="#">Nome Playlist</a></li>
+          <li><a class="btn_link d-block" href="#">Nome Playlist</a></li>
+          <li><a class="btn_link d-block" href="#">Nome Playlist</a></li>
+        </ul>
+      </div>
+      <div class="account">
+        <a class="btn_link flex-align-middle" href="#"><img src="img/download.svg" alt="download icon"><span class="mobile-d-none">Installa app</span></a>
+        <div class="account__profile flex-align-middle">
+          <img src="img/profile.svg" alt="profile picture" class="profile__picture">
+          <span class="profile__username text--wcolor mobile-d-none">John Doe</span>
         </div>
       </div>
-      <div class="hero">
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-12 col-sm-6 textw_color">
-              <div class="hero_text">
-                <h1>The simplest cloud platform for developers & teams</h1>
-                <p>Deploy, manage, and scale cloud applications faster and more efficiently on DigitalOcean. We make managing infrastructure easy for teams and businesses, whether you' re running one virtual machine or ten thousand.</p>
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-              <div class="account_box text-center">
-                <h2>
-                  Deploy your app in seconds.
-                  <span class="textb_color">Get started now.</span>
-                </h2>
-                <form>
-                  <div class="form-group">
-                    <input class="form-control" type="email" placeholder="Email">
-                  </div>
-                  <div class="form-group">
-                    <input class="form-control" type="password" placeholder="Password">
-                  </div>
-                  <div>
-                    <button class="create_account_btn" type="submit">Create your account</button>
-                  </div>
-                  <div>
-                    <a href="#" class="signup_google_btn">Sign up with google</a>
-                  </div>
-                </form>
-                <div>
-                  <small>By signing up you agree to the <a class="textb_color" href="#">Terms of Service</a>.</small>
-                </div>
-              </div>
-            </div>
-          </div>
+    </aside>
+    <section class="collections">
+      <div class="collections__top-bar flex-align-middle">
+        <button class="btn_function btn_upgrade text--wcolor text--xsmall" type="button" name="button">Effettua l' upgrade</button>
+      </div>
+      <nav class="collections__nav">
+        <ul class="list_flex">
+          <li class="collections__nav__btn"><a class="btn_link" href="#">in evidenza</a></li>
+          <li class="collections__nav__btn"><a class="btn_link" href="#">podcast</a></li>
+          <li class="collections__nav__btn"><a class="btn_link" href="#">classifiche</a></li>
+          <li class="collections__nav__btn"><a class="btn_link" href="#">generi e mood</a></li>
+          <li class="collections__nav__btn"><a class="btn_link" href="#">nuove uscite</a></li>
+          <li class="collections__nav__btn"><a class="btn_link" href="#">scopri</a></li>
+        </ul>
+      </nav>
+      <div class="collections__section">
+        <div class="collections__section__top-text">
+          <h2 class="section--title">Recently played</h2>
+        </div>
+        <ul class="collections__row">
+          <li class="collections__row__box">
+            <button class="btn_function btn_function--cover" type="button" name="button"><img src="img/metal_lifting.jpg" alt="Metal genre playlist"></button>
+            <h3 class="description--title">Heavy Metal</h3>
+            <h4>subtitle</h4>
+          </li>
+          <li class="collections__row__box">
+            <button class="btn_function btn_function--cover" type="button" name="button"><img src="img/stranger.jpeg" alt="Stranger Things vol. 1"></button>
+            <h3 class="description--title">Stranger Things vol. 1 (a Netflix Original Series Soundtrack)</h3>
+            <h4>Kyle Dixon & Michael Stein</h4>
+          </li>
+          <li class="collections__row__box">
+            <button class="btn_function btn_function--cover" type="button" name="button"><img src="img/aquietplace.jpeg" alt="A quiet place"></button>
+            <h3 class="description--title">A quiet place</h3>
+            <h4>subtitle</h4>
+          </li>
+          <li class="collections__row__box">
+            <button class="btn_function btn_function--cover" type="button" name="button"><img src="img/split.jpeg" alt="Split"></button>
+            <h3 class="description--title">Split</h3>
+            <h4>subtitle</h4>
+          </li>
+          <li class="collections__row__box">
+            <button class="btn_function btn_function--cover" type="button" name="button"><img src="img/cure.jpeg" alt="A cure for wellness"></button>
+            <h3 class="description--title">A cure for wellness</h3>
+            <h4>subtitle</h4>
+          </li>
+          <li class="collections__row__box">
+            <button class="btn_function btn_function--cover" type="button" name="button"><img src="img/sinister.jpeg" alt="Sinister"></button>
+            <h3 class="description--title">Sinister</h3>
+            <h4>subtitle</h4>
+          </li>
+        </ul>
+      </div>
+      <div class="collections__section">
+        <div class="collections__section__top-text">
+          <h2 class="section--title">Creato per John Doe</h2>
+          <p>Più ascolti, più accurati saranno i suggerimenti.</p>
+        </div>
+        <ul class="collections__row">
+          <li class="collections__row__box">
+            <button class="btn_function btn_function--cover" type="button" name="button"><img src="img/radar.jpeg" alt="release radar"></button>
+            <h3 class="description--title">Release radar</h3>
+          </li>
+          <li class="collections__row__box">
+            <button class="btn_function btn_function--cover" type="button" name="button"><img src="img/mixdaily.jpeg" alt="Daily mix 1"></button>
+            <h3 class="description--title">Daily Mix 1</h3>
+          </li>
+        </ul>
+      </div>
+      <div class="collections__section">
+        <div class="collections__section__top-text">
+          <h2 class="section--title">Artisti più popolari</h2>
+          <p>Più ascolti, più accurati saranno i suggerimenti.</p>
+        </div>
+        <ul class="collections__row">
+          <li class="collections__row__box">
+            <button class="btn_function btn_function--cover btn_function--artist" type="button" name="button"><img src="img/youg.jpeg" alt="Youg"></button>
+            <h3 class="description--title">Lana del Ray</h3>
+          </li>
+          <li class="collections__row__box">
+            <button class="btn_function btn_function--cover btn_function--artist" type="button" name="button"><img src="img/einaudi.jpeg" alt="Einaudi"></button>
+            <h3 class="description--title">Einaudi</h3>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="bottom-bar flex-align-middle">
+      <div class="bottom-bar__track-infos flex-align-middle">
+        <img src="img/betterdays.jpg" alt="dogs cover">
+        <div class="track-infos__text">
+          <h5 class="text--wcolor">Better Days</h5>
+          <h6>Lakey Inspired</h6>
+        </div>
+        <div class="track-infos__actions">
+          <button class="btn_function d-block" type="button" name="button"><i class="far fa-heart"></i></button>
+          <button class="btn_function d-block" type="button" name="button"><i class="far fa-folder"></i></button>
         </div>
       </div>
-      <section class="sponsors bg_secondary">
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-xs-12">
-              <h3 class="textg_color">Innovative business trust digitalocean</h3>
-            </div>
-          </div>
-          <div class="row spacing_fix">
-            <div class="col-xs-12">
-              <img src="img/dockerlogo.svg" alt="Docker logo">
-              <img src="img/gitlablogo.svg" alt="Git lab logo">
-              <img src="img/slacklogo.svg" alt="Slack logo">
-              <img src="img/hashicorplogo.svg" alt="Hashi corp logo">
-              <img src="img/hashicorplogo.svg" alt="Hashi corp logo">
-              <img src="img/splunklogo.svg" alt="Splunk logo">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-12">
-              <a class="arrow_link" href="#">View customer stories</a>
-            </div>
-          </div>
+      <div class="bottom-bar__player">
+        <div class="player__actions">
+          <button class="btn_function" type="button" name="button"><i class="fas fa-random"></i></button>
+          <button class="btn_function" type="button" name="button"><i class="fas fa-caret-left"></i></button>
+          <button class="btn_function" type="button" name="button"><i class="far fa-play-circle"></i></button>
+          <button class="btn_function" type="button" name="button"><i class="fas fa-caret-right"></i></button>
+          <button class="btn_function" type="button" name="button"><i class="fas fa-redo"></i></button>
         </div>
-      </section>
-    </header>
-    <main>
-      <section class="deploy_section">
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-12 text-center">
-              <h2>Deploy and scale seamlessly</h2>
-              <p class="textg_color">Our optimized configuration process saves your team time when running and scaling distributed applications, AI & machine learning workloads, hosted services, client websites, or CI/CD environments</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-12 col-sm-3 col-sm-offset-1">
-              <ul>
-                <li><button>Deploy</button></li>
-                <li><button>Manage</button></li>
-                <li><button>Secure</button></li>
-                <li><button>Scale</button></li>
-                <li><button>Monitor</button></li>
-              </ul>
-            </div>
-            <div class="col-xs-12 col-sm-7">
-              <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                  <div class="features_box">
-                    <img src="img/cluster-deploy.svg" alt="cluster deploy logo">
-                    <h3>Cluster deployments</h3>
-                    <p>Provision Multiple Droplets (virtual machines) in seconds with our control panel; CLI, or directly against our API.</p>
-                  </div>
-                </div>
-                <div class="col-xs-12 col-sm-6">
-                  <div class="features_box">
-                    <img src="img/optimized-compute.svg" alt="optimized compute logo">
-                    <h3>Optimized compute types</h3>
-                    <p>Get the compute resources you need with Standard or Optimized Droplets.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                  <div class="features_box">
-                    <img src="img/one-click.svg" alt="one click logo">
-                    <h3>One-click apps</h3>
-                    <p>Skip the install and configuration process with pre-built open source images supporting Rails, Cassandra, Docker, and more.</p>
-                  </div>
-                </div>
-                <div class="col-xs-12 col-sm-6">
-                  <div class="features_box">
-                    <img src="img/global.svg" alt="globe image">
-                    <h3>Global availability</h3>
-                    <p>Deploy to any of our data center regions around the world.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="carousel_section bg_secondary">
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-xs-12">
-              <h2>Designed for developers</h2>
-              <p class="textlg_color">Build more and spend less time managing your infrastructure with ouer easy-to-use control panel and API.</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-12">
-              <button class="carousel_arrow textg_color" type="button" name="button"><i class="fas fa-angle-left"></i></button>
-              <img class="carousel_img" src="img/screenshot-create-droplet-12336b41.jpg" alt="Create droplet example">
-              <button class="carousel_arrow" type="button" name="button"><i class="fas fa-angle-right"></i></button>
-            </div>
-            <div class="col-xs-12">
-              <span>Create compute servers in 55 seconds or less</span>
-            </div>
-            <div class="col-xs-12">
-              <button class="carousel_dot" type="button" name="button"></button>
-              <button class="carousel_dot" type="button" name="button"></button>
-              <button class="carousel_dot" type="button" name="button"></button>
-              <button class="carousel_dot" type="button" name="button"></button>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="features_section">
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-12 text-center">
-              <h2>The features your business needs</h2>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-              <div class="features_box">
-                <img src="img/pred-pricing.svg" alt="Sheet image">
-                <h3>Predictable pricing</h3>
-                <p>Leave complex pricing structures behind. Always know what you' ll pay per month with a flat, industry-leading pricing structure.</p>
-                <a class="arrow_link" href="#">Pricing</a>
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-              <div class="features_box">
-                <img src="img/world-class.svg" alt="connection image">
-                <h3>World-class service</h3>
-                <p>Free round-the-rock technical support for all customers. You' ll feel the love.</p>
-                <a class="arrow_link" href="#">Support</a>
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-              <div class="features_box">
-                <img src="img/reliable-platform.svg" alt="structure image">
-                <h3>Reliable platform</h3>
-                <p>More than 100,000 developer teams worldwide trust DigitalOcean to support their business with a 99.99% uptime SLA for all services</p>
-                <a class="arrow_link" href="#">Security</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="regions_section">
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-12">
-              <h2 class="textw_color text-center">Service your customers around the world from 12 regions</h2>
-            </div>
-            <div class="col-xs-12 col-md-6">
-              <ul class="list-unstyled">
-                <li>
-                  <span class="textw_color">AMS2</span>
-                  <p class="textlb_color">Amsterdam, Netherlands</p>
-                  <a class="arrow_link" href="#">Test speed</a>
-                </li>
-                <li>
-                  <span class="textw_color">AMS3</span>
-                  <p class="textlb_color">Amsterdam, Netherlands</p>
-                  <a class="arrow_link" href="#">Test speed</a>
-                </li>
-                <li>
-                  <span class="textw_color">BLR1</span>
-                  <p class="textlb_color">Bangalore, India</p>
-                  <a class="arrow_link" href="#">Test speed</a>
-                </li>
-                <li>
-                  <span class="textw_color">FRA1</span>
-                  <p class="textlb_color">Franfurt, Germany</p>
-                  <a class="arrow_link" href="#">Test speed</a>
-                </li>
-                <li>
-                  <span class="textw_color">LON1</span>
-                  <p class="textlb_color">London, UK</p>
-                  <a class="arrow_link" href="#">Test speed</a>
-                </li>
-                <li>
-                  <span class="textw_color">NYC1</span>
-                  <p class="textlb_color">New York, USA</p>
-                  <a class="arrow_link" href="#">Test speed</a>
-                </li>
-              </ul>
-            </div>
-            <div class="col-xs-12 col-md-6">
-              <ul class="list-unstyled">
-                <li>
-                  <span class="textw_color">AMS2</span>
-                  <p class="textlb_color">Amsterdam, Netherlands</p>
-                  <a class="arrow_link" href="#">Test speed</a>
-                </li>
-                <li>
-                  <span class="textw_color">AMS3</span>
-                  <p class="textlb_color">Amsterdam, Netherlands</p>
-                  <a class="arrow_link" href="#">Test speed</a>
-                </li>
-                <li>
-                  <span class="textw_color">BLR1</span>
-                  <p class="textlb_color">Bangalore, India</p>
-                  <a class="arrow_link" href="#">Test speed</a>
-                </li>
-                <li>
-                  <span class="textw_color">FRA1</span>
-                  <p class="textlb_color">Franfurt, Germany</p>
-                  <a class="arrow_link" href="#">Test speed</a>
-                </li>
-                <li>
-                  <span class="textw_color">LON1</span>
-                  <p class="textlb_color">London, UK</p>
-                  <a class="arrow_link" href="#">Test speed</a>
-                </li>
-                <li>
-                  <span class="textw_color">NYC1</span>
-                  <p class="textlb_color">New York, USA</p>
-                  <a class="arrow_link" href="#">Test speed</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="carousel_section bg_secondary">
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-xs-12">
-              <h2>Development teams love DigitalOcean</h2>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-12">
-              <button class="carousel_arrow textg_color" type="button" name="button"><i class="fas fa-angle-left"></i></button>
-              <div class="carousel_box">
-                <img src="img/rockerbox-logo.png" alt="rockerbox logo">
-                <p>
-                  <q>We have been able to make scaling the technical infrastructure of our business cost effective and efficient.</q>
-                  <span>Rick O’Toole</span>
-                  Co-founder and CTO
-                  <a class="arrow_link" href="#">Read story</a>
-                </p>
-              </div>
-              <button class="carousel_arrow" type="button" name="button"><i class="fas fa-angle-right"></i></button>
-            </div>
-            <div class="col-xs-12">
-              <button class="carousel_dot" type="button" name="button"></button>
-              <button class="carousel_dot" type="button" name="button"></button>
-              <button class="carousel_dot" type="button" name="button"></button>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="get_started text-center">
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-12">
-              <h2 class="textw_color">Get started now.</h2>
-            </div>
-            <div class="col-xs-12">
-              <a class="signup_btn" href="#">
-                Create your account
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="textlb_color">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-md-4 social_copyright">
-            <img src="img/favicon.ico" alt="DigitalOcean logo">
-            <p>&copy; 2021 DigitalOcean, LLC. All rights reserved.<br>
-              <span>
-                Proudly made in NY
-              </span>
-            </p>
-            <ul class="list-inline">
-              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
-              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-              <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-              <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-            </ul>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-2">
-            <h4 class="textw_color">Company</h4>
-            <ul class="list-unstyled">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Leadership</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Partner network</a></li>
-              <li><a href="#">Referral program</a></li>
-              <li><a href="#">Events</a></li>
-              <li><a href="#">Press</a></li>
-              <li><a href="#">Legal & Security</a></li>
-            </ul>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-2">
-            <h4 class="textw_color">Products</h4>
-            <ul class="list-unstyled">
-              <li><a href="#">Droplets</a></li>
-              <li><a href="#">Spaces</a></li>
-              <li><a href="#">Kubernetes</a></li>
-              <li><a href="#">Load Balancers</a></li>
-              <li><a href="#">Block Storage</a></li>
-              <li><a href="#">Tools & Integrations</a></li>
-              <li><a href="#">One-Click Apps</a></li>
-              <li><a href="#">API</a></li>
-              <li><a href="#">Pricing</a></li>
-              <li><a href="#">Documentation</a></li>
-              <li><a href="#">Release Notes</a></li>
-            </ul>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-2">
-            <h4 class="textw_color">Community</h4>
-            <ul class="list-unstyled">
-              <li><a href="#">Tutorials</a></li>
-              <li><a href="#">Meetups</a></li>
-              <li><a href="#">Q&A</a></li>
-              <li><a href="#">Write for Donations</a></li>
-              <li><a href="#">Droplets for Demos</a></li>
-              <li><a href="#">Hatch</a></li>
-              <li><a href="#">Shop Swag</a></li>
-              <li><a href="#">Research program</a></li>
-              <li><a href="#">Currents Research</a></li>
-              <li><a href="#">Open source</a></li>
-            </ul>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-2">
-            <h4 class="textw_color">Support</h4>
-            <ul class="list-unstyled">
-              <li><a href="#">Contact support</a></li>
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Network Status</a></li>
-            </ul>
-          </div>
+        <div class="player__progress-bar flex-align-middle">
+          <span class="text--wcolor text--xsmall">0:25</span>
+          <span class="progress-bar-back"></span>
+          <span class="text--wcolor text--xsmall">4:35</span>
         </div>
       </div>
-      <div class="shark_popup">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-xs-12 col-xs-push-0 col-md-3 col-md-push-9">
-              <div class="shark_img textw_color">
-                <img src="img/sammy-front.png" alt="Sammy the shark chat">
-              </div>
-            </div>
-            <div class="col-xs-12 col-xs-pull-0 col-md-9 col-md-pull-3">
-              <div class="shark_msg">
-                <div class="msg_overflow">
-                  <span>Can i help answer any questions you have about DigitalOcean?</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="bottom-bar__options flex-align-middle">
+        <button class="btn_function" type="button" name="button"><i class="fas fa-list"></i></button>
+        <button class="btn_function" type="button" name="button"><i class="fas fa-desktop"></i></button>
+        <button class="btn_function" type="button" name="button"><i class="fas fa-volume-up"></i></button>
+        <span class="progress-bar-back progress-bar-back--volume"></span>
       </div>
-    </footer>
-  </body>
+    </section>
+  </main>
+</body>
 </html>
