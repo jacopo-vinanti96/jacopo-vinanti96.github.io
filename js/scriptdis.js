@@ -40,6 +40,10 @@ kids = new Audio('audio/hurray.mp3');
 // Onclick inizia la funzione
 function startGame() {
 
+  // Reset
+  output.classList.remove("visible");
+  bombs = [];
+  userNumList = [];
 
   // Selezione livello e relativi controlli
   var level = parseInt( prompt("INSERISCI: \n0 = livello facile \n1 = livello normale \n2 = livello difficile") );
@@ -83,14 +87,11 @@ function btnValue() {
           return output.innerHTML = "Hai perso... Punteggio: " + userNumList.length;
         } else {
           buttonsHTML[i].classList.add("clicked");
-          console.log(buttonsHTML[i]);
-          console.log(buttonsHTML[i].value);
         }
       }
     }
 
     userNumList.push(buttonValue);
-    console.log(userNumList);
 
   } else if ( userNumList.length == maxNum - nBombe ) {
     kids.play();
