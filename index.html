@@ -1,167 +1,22 @@
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <title>Spotify - COPIA</title>
+  <title>Document</title>
 </head>
 <body>
-  <main class="app-view">
-    <aside class="side-bar">
-      <header class="side-bar__header">
-        <img class="logo text--wcolor" src="img/logo.svg" alt="logo">
-        <img class="logo-mobile" src="img/logo-small.svg" alt="logo">
-        <nav>
-          <ul>
-            <li class="side-bar__header__nav-item"><a class="btn_link flex-align-middle" href="#"><img src="img/home.svg" alt="Home icon"><span class="mobile-d-none">Home</span></a></li>
-            <li class="side-bar__header__nav-item"><button class="btn_function flex-align-middle" type="button" name="button"><img src="img/search.svg" alt="search icon"><span class="mobile-d-none">Cerca</span></button></li>
-            <li class="side-bar__header__nav-item"><a class="btn_link flex-align-middle" href="#"><img src="img/libreria.svg" alt="library icon"><span class="mobile-d-none">La mia libreria</span></a></li>
-          </ul>
-        </nav>
-      </header>
-      <div class="side-bar__playlist mobile-d-none">
-        <h3 class="playlist--title">Playlist</h3>
-        <button class="btn_function btn_function--playlist-creation flex-align-middle" type="button" name="button"><span class="plus-square">+</span>Crea Playlist</button>
-        <ul>
-          <li><a class="btn_link d-block" href="#">Nome Playlist</a></li>
-          <li><a class="btn_link d-block" href="#">Nome Playlist</a></li>
-          <li><a class="btn_link d-block" href="#">Nome Playlist</a></li>
-          <li><a class="btn_link d-block" href="#">Nome Playlist</a></li>
-          <li><a class="btn_link d-block" href="#">Nome Playlist</a></li>
-          <li><a class="btn_link d-block" href="#">Nome Playlist</a></li>
-          <li><a class="btn_link d-block" href="#">Nome Playlist</a></li>
-        </ul>
-      </div>
-      <div class="account">
-        <a class="btn_link flex-align-middle" href="#"><img src="img/download.svg" alt="download icon"><span class="mobile-d-none">Installa app</span></a>
-        <div class="account__profile flex-align-middle">
-          <img src="img/profile.svg" alt="profile picture" class="profile__picture">
-          <span class="profile__username text--wcolor mobile-d-none">John Doe</span>
-        </div>
-      </div>
-    </aside>
-    <section class="collections">
-      <div class="collections__top-bar flex-align-middle">
-        <button class="btn_function btn_upgrade text--wcolor text--xsmall" type="button" name="button">Effettua l' upgrade</button>
-      </div>
-      <nav class="collections__nav">
-        <ul class="list_flex">
-          <li class="collections__nav__btn"><a class="btn_link" href="#">in evidenza</a></li>
-          <li class="collections__nav__btn"><a class="btn_link" href="#">podcast</a></li>
-          <li class="collections__nav__btn"><a class="btn_link" href="#">classifiche</a></li>
-          <li class="collections__nav__btn"><a class="btn_link" href="#">generi e mood</a></li>
-          <li class="collections__nav__btn"><a class="btn_link" href="#">nuove uscite</a></li>
-          <li class="collections__nav__btn"><a class="btn_link" href="#">scopri</a></li>
-        </ul>
-      </nav>
-      <div class="collections__section">
-        <div class="collections__section__top-text">
-          <h2 class="section--title">Recently played</h2>
-        </div>
-        <ul class="collections__row">
-          <li class="collections__row__box">
-            <button class="btn_function btn_function--cover" type="button" name="button"><img src="img/metal_lifting.jpg" alt="Metal genre playlist"></button>
-            <h3 class="description--title">Heavy Metal</h3>
-            <h4>subtitle</h4>
-          </li>
-          <li class="collections__row__box">
-            <button class="btn_function btn_function--cover" type="button" name="button"><img src="img/stranger.jpeg" alt="Stranger Things vol. 1"></button>
-            <h3 class="description--title">Stranger Things vol. 1 (a Netflix Original Series Soundtrack)</h3>
-            <h4>Kyle Dixon & Michael Stein</h4>
-          </li>
-          <li class="collections__row__box">
-            <button class="btn_function btn_function--cover" type="button" name="button"><img src="img/aquietplace.jpeg" alt="A quiet place"></button>
-            <h3 class="description--title">A quiet place</h3>
-            <h4>subtitle</h4>
-          </li>
-          <li class="collections__row__box">
-            <button class="btn_function btn_function--cover" type="button" name="button"><img src="img/split.jpeg" alt="Split"></button>
-            <h3 class="description--title">Split</h3>
-            <h4>subtitle</h4>
-          </li>
-          <li class="collections__row__box">
-            <button class="btn_function btn_function--cover" type="button" name="button"><img src="img/cure.jpeg" alt="A cure for wellness"></button>
-            <h3 class="description--title">A cure for wellness</h3>
-            <h4>subtitle</h4>
-          </li>
-          <li class="collections__row__box">
-            <button class="btn_function btn_function--cover" type="button" name="button"><img src="img/sinister.jpeg" alt="Sinister"></button>
-            <h3 class="description--title">Sinister</h3>
-            <h4>subtitle</h4>
-          </li>
-        </ul>
-      </div>
-      <div class="collections__section">
-        <div class="collections__section__top-text">
-          <h2 class="section--title">Creato per John Doe</h2>
-          <p>Più ascolti, più accurati saranno i suggerimenti.</p>
-        </div>
-        <ul class="collections__row">
-          <li class="collections__row__box">
-            <button class="btn_function btn_function--cover" type="button" name="button"><img src="img/radar.jpeg" alt="release radar"></button>
-            <h3 class="description--title">Release radar</h3>
-          </li>
-          <li class="collections__row__box">
-            <button class="btn_function btn_function--cover" type="button" name="button"><img src="img/mixdaily.jpeg" alt="Daily mix 1"></button>
-            <h3 class="description--title">Daily Mix 1</h3>
-          </li>
-        </ul>
-      </div>
-      <div class="collections__section">
-        <div class="collections__section__top-text">
-          <h2 class="section--title">Artisti più popolari</h2>
-          <p>Più ascolti, più accurati saranno i suggerimenti.</p>
-        </div>
-        <ul class="collections__row">
-          <li class="collections__row__box">
-            <button class="btn_function btn_function--cover btn_function--artist" type="button" name="button"><img src="img/youg.jpeg" alt="Youg"></button>
-            <h3 class="description--title">Lana del Ray</h3>
-          </li>
-          <li class="collections__row__box">
-            <button class="btn_function btn_function--cover btn_function--artist" type="button" name="button"><img src="img/einaudi.jpeg" alt="Einaudi"></button>
-            <h3 class="description--title">Einaudi</h3>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <section class="bottom-bar flex-align-middle">
-      <div class="bottom-bar__track-infos flex-align-middle">
-        <img src="img/betterdays.jpg" alt="dogs cover">
-        <div class="track-infos__text">
-          <h5 class="text--wcolor">Better Days</h5>
-          <h6>Lakey Inspired</h6>
-        </div>
-        <div class="track-infos__actions">
-          <button class="btn_function d-block" type="button" name="button"><i class="far fa-heart"></i></button>
-          <button class="btn_function d-block" type="button" name="button"><i class="far fa-folder"></i></button>
-        </div>
-      </div>
-      <div class="bottom-bar__player">
-        <div class="player__actions">
-          <button class="btn_function" type="button" name="button"><i class="fas fa-random"></i></button>
-          <button class="btn_function" type="button" name="button"><i class="fas fa-caret-left"></i></button>
-          <button class="btn_function" type="button" name="button"><i class="far fa-play-circle"></i></button>
-          <button class="btn_function" type="button" name="button"><i class="fas fa-caret-right"></i></button>
-          <button class="btn_function" type="button" name="button"><i class="fas fa-redo"></i></button>
-        </div>
-        <div class="player__progress-bar flex-align-middle">
-          <span class="text--wcolor text--xsmall">0:25</span>
-          <span class="progress-bar-back"></span>
-          <span class="text--wcolor text--xsmall">4:35</span>
-        </div>
-      </div>
-      <div class="bottom-bar__options flex-align-middle">
-        <button class="btn_function" type="button" name="button"><i class="fas fa-list"></i></button>
-        <button class="btn_function" type="button" name="button"><i class="fas fa-desktop"></i></button>
-        <button class="btn_function" type="button" name="button"><i class="fas fa-volume-up"></i></button>
-        <span class="progress-bar-back progress-bar-back--volume"></span>
-      </div>
-    </section>
+  <header>
+    <h1>Numero Bomba</h1>
+  </header>
+  <main>
+    <button id="start-game-btn" type="button" name="button" onclick="startGame()"><span class="bounce">I</span><span class="bounce bounce-1">n</span><span class="bounce bounce-2">i</span><span class="bounce bounce-3">z</span><span class="bounce bounce-4">i</span><span class="bounce bounce-5">a</span></button>
+    <p id="output">Placeholder</p>
+    <div id="buttons-container">
+    </div>
   </main>
+  <script src="js/scriptdis.js" charset="utf-8"></script>
 </body>
 </html>
