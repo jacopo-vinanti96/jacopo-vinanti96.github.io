@@ -15,7 +15,11 @@ main p {
 }
 
 p.visible {
-  opacity: 1;  
+  opacity: 1;
+}
+
+.d-none {
+  display: none;
 }
 
 .btn {
