@@ -38,6 +38,7 @@ h1 span {
   width: 1024px;
   margin: auto;
   margin-top: 60px;
+  margin-bottom: 60px;
   background-color: #9792E3;
   padding: 40px;
   color: #331E36;
@@ -54,15 +55,80 @@ summary {
 
 h2 {
   display: inline-block;
+  max-width: 100%;
+  word-wrap: break-word;
 }
 
-input, li {
+.input__container {
+  padding-bottom: 5px;
+  border-bottom: 1px solid lightgrey;
+  margin-bottom: 33px;
+}
+
+input, li, .add-btn  {
   font-size: 18px;
+}
+
+input {
+  background-color: #EDE2B5;
+  border: none;
+  border-radius: 4px;
+}
+
+.plus {
+  position: relative;
+  vertical-align: sub;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+  background-color: #331E36;
+  color: #9792E3;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+  bottom: -3px;
+}
+
+.plus span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.add-btn {
+  display: none;
+  vertical-align: bottom;
+  padding: 0 10px;
+  background-color: #EDE2B5;
+  color: #331E36;
+  border: none;
+  border-radius: 4px;
 }
 
 @media screen and (max-width: 1024px) {
   .main__container {
     width: 100%;
+  }
+
+  .add-btn {
+    display: inline-block;
+  }
+
+  .instruction {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 391px) {
+  .add-btn {
+    margin-top: 5px;
+    display: block;
+  }
+
+  .plus {
+    display: none;
   }
 }
 
@@ -76,6 +142,8 @@ li {
   width: max-content;
   opacity: 1;
   transition: opacity 1s;
+  max-width: 100%;
+  word-wrap: break-word;
 }
 
 li.clicked {

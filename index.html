@@ -16,6 +16,12 @@
   </header>
   <main>
     <div class="main__container">
+      <div class="input__container">
+        <label for="add-project" class="plus"><span>+</span></label>
+        <input id="add-project" type="text" placeholder="Add a project">
+        <span class="instruction">Press Enter &#9166;</span>
+        <button class="add-btn" type="button" name="button" onclick="addProjectLine()">Add</button>
+      </div>
       <div class="list__container">
         <details open>
           <summary><h2>Today</h2></summary>
@@ -35,9 +41,6 @@
             </ul>
           </details>
         </div>
-      </div>
-      <div class="input__container">
-        <input id="add-project" type="text" placeholder="Add a project">
       </div>
     </div>
   </main>

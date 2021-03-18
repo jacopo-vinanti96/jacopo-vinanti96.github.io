@@ -22,6 +22,55 @@ function inputControl (word) {
   }
 }
 
+// Funzione per aggiungere un progetto
+function addProjectLine () {
+  addValue = addProject.val();
+  inputControl(addValue);
+  // Se l' input passa al controllo si chiede la data
+  if ( valid == true ) {
+    projectDate = prompt("Insert the date\n(Example: today, tomorrow, 31/12/1999)");
+    // Si genera la nuova riga
+    tempTemplate = lineTemplate.clone();
+    tempTemplate.prepend(addValue);
+    // Si controlla se la data corrisponde e si aggiunge la riga in HTML
+    if ( projectDate.toLowerCase() == "today" ) {
+      today.append(tempTemplate);
+
+    } else if ( projectDate.toLowerCase() == "tomorrow" ) {
+      tomorrow.append(tempTemplate);
+    //Altrimenti se la data non è tra le predefinite
+    } else {
+      // Dichiarazione variabili
+      var appended = false;
+      //Le date inserite dall' utente
+      var userDates = $('div:not(.template) > .details-template .summary-title');
+
+      // Se sono state inserite date personalizzate si controlla la data
+      if ( userDates.length > 0 ) {
+        for (var i = 0; i < userDates.length; i++) {
+          // Se la data esiste già allora si aggiunge la riga a questa data
+          if ( $(userDates[i]).text() == projectDate ) {
+
+            $(userDates[i])
+            .parent('.summary-template')
+            .siblings('.list-template')
+            .append(tempTemplate);
+
+            appended = true;
+          }
+        }
+      }
+      // Altrimenti appended non è true quindi la data è nuova
+      if ( appended == false ) {
+        tempTemplate = detailsTemplate.clone();
+        tempTemplate.find('.summary-title').append( projectDate );
+        tempTemplate.find('.list-element').prepend(addValue);
+        $('.list__container').append(tempTemplate);
+      }
+    }
+    addProject.val("");
+  }
+}
 
 // Onclick addProject legge valore e lo aggiunge come nuova riga di testo
 addProject.on('keydown', function (e) {
@@ -29,51 +78,7 @@ addProject.on('keydown', function (e) {
   valid = false;
 // Se viene premuto enter allora l' algoritmo viene eseguito
   if ( e.keyCode == 13 ) {
-    addValue = addProject.val();
-    inputControl(addValue);
-// Se l' input passa al controllo si chiede la data
-    if ( valid == true ) {
-      projectDate = prompt("Insert the date\n(Example: today, tomorrow, 31/12/1999)");
-      // Si genera la nuova riga
-      tempTemplate = lineTemplate.clone();
-      tempTemplate.prepend(addValue);
-      // Si controlla se la data corrisponde e si aggiunge la riga in HTML
-      if ( projectDate.toLowerCase() == "today" ) {
-        today.append(tempTemplate);
-
-      } else if ( projectDate.toLowerCase() == "tomorrow" ) {
-        tomorrow.append(tempTemplate);
-      //Altrimenti se la data non è tra le predefinite
-      } else {
-        // Dichiarazione variabili
-        var appended = false;
-        //Le date inserite dall' utente
-        var userDates = $('div:not(.template) > .details-template .summary-title');
-
-        // Se sono state inserite date personalizzate si controlla la data
-        if ( userDates.length > 0 ) {
-          for (var i = 0; i < userDates.length; i++) {
-            // Se la data esiste già allora si aggiunge la riga a questa data
-            if ( $(userDates[i]).text() == projectDate ) {
-
-              $(userDates[i])
-              .parent('.summary-template')
-              .siblings('.list-template')
-              .append(tempTemplate);
-
-              appended = true;
-            }
-          }
-        }
-        // Altrimenti appended non è true quindi la data è nuova
-        if ( appended == false ) {
-          tempTemplate = detailsTemplate.clone();
-          tempTemplate.find('.summary-title').append( projectDate );
-          tempTemplate.find('.list-element').prepend(addValue);
-          $('.list__container').append(tempTemplate);
-        }
-      }
-    }
+    addProjectLine();
   }
 });
 
