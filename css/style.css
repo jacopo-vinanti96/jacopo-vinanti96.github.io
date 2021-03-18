@@ -60,6 +60,12 @@ input, li {
   font-size: 18px;
 }
 
+@media screen and (max-width: 1024px) {
+  .main__container {
+    width: 100%;
+  }
+}
+
 /* Liste */
 ul {
   list-style: none;
