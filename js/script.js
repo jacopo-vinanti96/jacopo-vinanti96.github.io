@@ -24,7 +24,11 @@ function inputControl (word) {
 
 // Funzione per aggiungere un progetto
 function addProjectLine () {
+  // Assegnazione valid per il controllo
+  valid = false;
+  // Assegnazione valore dell' input
   addValue = addProject.val();
+  //Controllo dell' input
   inputControl(addValue);
   // Se l' input passa al controllo si chiede la data
   if ( valid == true ) {
@@ -72,13 +76,23 @@ function addProjectLine () {
   }
 }
 
+var firstKeyDown = true;
+
 // Onclick addProject legge valore e lo aggiunge come nuova riga di testo
 addProject.on('keydown', function (e) {
-// Assegnazione valid per il controllo
-  valid = false;
+  
+  if ( firstKeyDown == true ) {
+    $('.instruction').addClass('visible');
+    firstKeyDown = false;
+  } else if ( addProject.val().length == 1 && e.keyCode == 8 ) {
+    $('.instruction').removeClass('visible');
+    firstKeyDown = true;
+  }
 // Se viene premuto enter allora l' algoritmo viene eseguito
   if ( e.keyCode == 13 ) {
     addProjectLine();
+    $('.instruction').removeClass('visible');
+    firstKeyDown = true;
   }
 });
 

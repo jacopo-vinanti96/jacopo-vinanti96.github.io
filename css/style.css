@@ -97,6 +97,14 @@ input {
   transform: translate(-50%, -50%);
 }
 
+.instruction {
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+}
+
 .add-btn {
   display: none;
   vertical-align: bottom;
