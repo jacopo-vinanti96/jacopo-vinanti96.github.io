@@ -99,6 +99,9 @@ input {
 
 .instruction {
   opacity: 0;
+  display: block;
+  margin-left: 32px;
+  font-weight: 700;
 }
 
 .visible {
@@ -127,16 +130,27 @@ input {
   .instruction {
     display: none;
   }
+
+  .input__container {
+    padding-bottom: 27px;
+  }
 }
 
-@media screen and (max-width: 391px) {
+@media screen and (max-width: 582px) {
   .add-btn {
-    margin-top: 5px;
+    margin-top: 30px;
     display: block;
   }
 
   .plus {
     display: none;
+  }
+}
+
+@media screen and (max-width: 491px) {
+  .user-date {
+    display: block;
+    margin-top: 10px;
   }
 }
 

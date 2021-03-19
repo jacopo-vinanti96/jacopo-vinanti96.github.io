@@ -1,6 +1,7 @@
 // Dichiarazione variabili
 var addProject = $('#add-project'),
     addValue,
+    date = new Date,
     detailsTemplate = $('.template .details-template'),
     lineTemplate = $('.list-template .list-element'),
     projectDate,
@@ -22,6 +23,29 @@ function inputControl (word) {
   }
 }
 
+// Date dev' essere il valore di un input date
+function reverseDate (date) {
+  let userDay = date[8] + date[9];
+  let userMonth = date[5] + date[6];
+  let userYear = date[0] + date[1] + date[2] + date[3];
+  return `${userDay}/${userMonth}/${userYear}`;
+}
+
+// Dichiarazione giorno attuale e giorno successivo e conversione
+var month = date.getUTCMonth() + 1; //mesi da 1-12
+
+if ( month < 10 ) {
+  month = `0${month}`;
+  console.log("lunghezza 1");
+}
+
+const day = date.getUTCDate();
+const year = date.getUTCFullYear();
+// Conversione
+const currentDate = `${day}/${month}/${year}`;
+const duedate = `${day + 1}/${month}/${year}`;
+
+
 // Funzione per aggiungere un progetto
 function addProjectLine () {
   // Assegnazione valid per il controllo
@@ -32,15 +56,22 @@ function addProjectLine () {
   inputControl(addValue);
   // Se l' input passa al controllo si chiede la data
   if ( valid == true ) {
-    projectDate = prompt("Insert the date\n(Example: today, tomorrow, 31/12/1999)");
+    // Input data dell' utente
+    projectDate = $('.user-date').val();
+    // Si modifica la data
+    projectDate = reverseDate(projectDate);
+
+    console.log(currentDate);
+    console.log(duedate);
+
     // Si genera la nuova riga
     tempTemplate = lineTemplate.clone();
     tempTemplate.prepend(addValue);
     // Si controlla se la data corrisponde e si aggiunge la riga in HTML
-    if ( projectDate.toLowerCase() == "today" ) {
+    if ( projectDate == currentDate ) {
       today.append(tempTemplate);
 
-    } else if ( projectDate.toLowerCase() == "tomorrow" ) {
+    } else if ( projectDate == duedate ) {
       tomorrow.append(tempTemplate);
     //Altrimenti se la data non è tra le predefinite
     } else {
@@ -76,23 +107,28 @@ function addProjectLine () {
   }
 }
 
-var firstKeyDown = true;
 
 // Onclick addProject legge valore e lo aggiunge come nuova riga di testo
 addProject.on('keydown', function (e) {
-  
-  if ( firstKeyDown == true ) {
-    $('.instruction').addClass('visible');
-    firstKeyDown = false;
-  } else if ( addProject.val().length == 1 && e.keyCode == 8 ) {
-    $('.instruction').removeClass('visible');
-    firstKeyDown = true;
-  }
 // Se viene premuto enter allora l' algoritmo viene eseguito
   if ( e.keyCode == 13 ) {
     addProjectLine();
     $('.instruction').removeClass('visible');
     firstKeyDown = true;
+  }
+});
+
+// Funzione per rendere visibile le istruzioni qualora l' input non sia vuoto
+var firstKeyDown = true;
+
+addProject.on('keyup', function (e) {
+
+  if ( addProject.val() == "" ) {
+    $('.instruction').removeClass('visible');
+    firstKeyDown = true;
+  } else if ( firstKeyDown = true ) {
+    $('.instruction').addClass('visible');
+    firstKeyDown = false;
   }
 });
 
