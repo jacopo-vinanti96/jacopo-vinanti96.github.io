@@ -4,47 +4,120 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <title>To do list - copia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Boolflix</title>
 </head>
 <body>
-  <header>
-    <h1>To do list <span>&check;</span></h1>
-  </header>
-  <main>
-    <div class="main__container">
-      <div class="input__container">
-        <label for="add-project" class="plus"><span>+</span></label>
-        <input id="add-project" type="text" placeholder="Add a project">
-        <input class="user-date" type="date">
-        <span class="instruction">Press Enter &#9166;</span>
-        <button class="add-btn" type="button" name="button" onclick="addProjectLine()">Add</button>
-      </div>
-      <div class="list__container">
-        <details open>
-          <summary><h2>Today</h2></summary>
-          <ul id="today">
-          </ul>
-        </details>
-        <details open>
-          <summary><h2>Tomorrow</h2></summary>
-          <ul id="tomorrow">
-          </ul>
-        </details>
-        <div class="template">
-          <details class="details-template" open>
-            <summary class="summary-template"><h2 class="summary-title"></h2></summary>
-            <ul class="list-template">
-              <li class="list-element"><span> &cross;</span><span class="check"> &check;</span></li>
-            </ul>
-          </details>
+  <div id="app">
+    <header>
+      <div class="header__container">
+        <h1 class="logo">Boolflix</h1>
+        <div class="actions">
+          <input id="title-search" type="text" name="title-search" @keydown.enter="search()" value="" placeholder="Titolo film">
+          <button class="btn" @click="search()" type="button" name="button">Cerca</button>
         </div>
       </div>
-    </div>
-  </main>
+    </header>
+    <main>
+      <div class="main-container">
+        <!-- Template film -->
+        <h2 v-show="moviesQuery.length > 0" class="section-title" >Film</h2>
+        <i v-show="moviesQuery.length > 0" @click="prevMoviesIndex()" class="fas fa-angle-left"></i>
+        <ul v-show="moviesQuery.length > 0" class="section-container">
+          <li v-for="(movie, i) in moviesQuery" v-show="moviesQueryShow.includes(i)" class="size-container">
+            <div class="movie-container">
+              <div class="movie-card">
+                <img v-if="movie.poster_path != null" class="img--poster" :src="'https://image.tmdb.org/t/p/w300' + movie.poster_path" alt="movie.title">
+                <!-- Se il poster non viene trovato nel db -->
+                <div v-else-if="movie.backdrop_path != null" class="poster-null">
+                  <img class="poster-null__placeholder" src="https://via.placeholder.com/300x150/000000/000000?Text=" alt="">
+                  <img :src="'https://image.tmdb.org/t/p/w300' + movie.backdrop_path" class="img--poster" alt="movie.name">
+                  <img class="poster-null__placeholder" src="https://via.placeholder.com/300x150/000000/000000?Text=" alt="">
+                </div>
+                <div v-else class="poster-null">
+                  <img class="poster-null__placeholder" src="https://via.placeholder.com/300x150/000000/000000?Text=" alt="">
+                  <span class="poster-null__title">{{ movie.title }}</span>
+                  <span class="poster-null__error">Poster non disponibile X</span>
+                  <img class="poster-null__placeholder" src="https://via.placeholder.com/300x150/000000/000000?Text=" alt="">
+                </div>
+              </div>
+              <ul class="movie-data">
+                <li class="text--feat">Titolo: <span class="text--desc">{{ movie.title }}</span></li>
+                <li class="text--feat">Titolo originale: <span class="text--desc">{{ movie.original_title }}</span></li>
+                <li class="text--feat">Voto:
+                  <i v-for="unit in movie.rating" class="fas fa-star"></i><!--
+                    !--><i v-for="unit in ( 5 -  movie.rating )" class="far fa-star"></i>
+                  </li>
+                <li class="text--feat">Language:
+                  <img v-if="flags.includes( movie.original_language )" :src="'icons/' + movie.original_language + '.png'" :alt="movie.original_language">
+                  <span v-else class="text--desc">{{ movie.original_language }}</span>
+                </li>
+                <li v-if="movie.overview.length > 0" class="text--feat">Overview: <span class="text--desc">{{ movie.overview }}</span>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <i v-show="moviesQuery.length > 0" @click="nextMoviesIndex()" class="fas fa-angle-right"></i>
+        <div v-show="moviesQuery.length > 0" class="pages-container">
+          <ul class="pages">
+            <li><span>Pagine: </span></li>
+            <li v-for="page in moviePages" class="page"><button class="btn btn--mov" :class="{ 'btn--selected': btnMovSelected == page }" @click="getMovies(page);" type="button" name="button" :value="page">{{ page }}</button>
+            </li>
+          </ul>
+        </div>
+        <!-- Template serie tv -->
+        <h2 v-show="tvSeriesQuery.length > 0" class="section-title">Serie tv</h2>
+        <i v-show="tvSeriesQuery.length > 0" @click="prevTvIndex()" class="fas fa-angle-left"></i>
+        <ul v-show="tvSeriesQuery.length > 0" class="section-container">
+          <li v-for="( show, i ) in tvSeriesQuery" v-show="tvSeriesQueryShow.includes(i)" class="size-container">
+            <div class="movie-container">
+              <div class="movie-card">
+                <img v-if="show.poster_path != null" class="img--poster" :src="'https://image.tmdb.org/t/p/w300' + show.poster_path" alt="show.name">
+                <!-- Se il poster non viene trovato nel db -->
+                <div v-else-if="show.backdrop_path != null" class="poster-null">
+                  <img class="poster-null__placeholder" src="https://via.placeholder.com/300x150/000000/000000?Text=" alt="">
+                  <img :src="'https://image.tmdb.org/t/p/w300' + show.backdrop_path" class="img--poster" alt="show.name">
+                  <img class="poster-null__placeholder" src="https://via.placeholder.com/300x150/000000/000000?Text=" alt="">
+                </div>
+                <div v-else class="poster-null">
+                  <img class="poster-null__placeholder" src="https://via.placeholder.com/300x150/000000/000000?Text=" alt="">
+                  <span class="poster-null__title">{{ show.name }}</span>
+                  <span class="poster-null__error">Poster non disponibile X</span>
+                  <img class="poster-null__placeholder" src="https://via.placeholder.com/300x150/000000/000000?Text=" alt="">
+                </div>
+              </div>
+              <ul class="movie-data">
+                <li class="text--feat">Titolo: <span class="text--desc">{{ show.name }}</span></li>
+                <li class="text--feat">Titolo originale: <span class="text--desc">{{ show.original_name }}</span></li>
+                <li class="text--feat">Voto:
+                  <i v-for="unit in show.rating" class="fas fa-star"></i><!--
+                    !--><i v-for="unit in ( 5 -  show.rating )" class="far fa-star"></i>
+                  </li>
+                <li class="text--feat">Language:
+                  <img v-if="flags.includes( show.original_language )" :src="'icons/' + show.original_language + '.png'" :alt="show.original_language">
+                  <span v-else class="text--desc">{{ show.original_language }}</span>
+                </li>
+                <li v-if="show.overview.length > 0" class="text--feat">Overview: <span class="text--desc">{{ show.overview }}</span></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <i v-show="tvSeriesQuery.length > 0" @click="nextTvIndex()" class="fas fa-angle-right"></i>
+        <div v-show="tvSeriesQuery.length > 0" class="pages-container">
+          <ul class="pages">
+            <li><span>Pagine: </span></li>
+            <li v-for="page in tvPages" class="page"><button class="btn btn--tv" :class="{ 'btn--selected': btnTvSelected == page }" @click="getSeries(page);" type="button" name="button" :value="page">{{ page }}</button></li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
 
   <script src="js/script.js" charset="utf-8"></script>
 </body>

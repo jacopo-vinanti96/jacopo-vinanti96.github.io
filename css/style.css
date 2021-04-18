@@ -3,189 +3,235 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Nunito', sans-serif;
 }
 
-/* Mix */
-.template {
-  display: none;
-}
-
-/* BODY */
-body {
-  background-color: lightgrey;
-}
-
-/* Header */
-header {
-  padding: 20px;
-  width: 100%;
-  text-align: center;
-  background-color: #95C623;
-  color: #0E4749;
-}
-
-h1 {
-  font-weight: 900;
-}
-
-h1 span {
-  color: green;
-}
-
-/* Main */
-.main__container {
-  width: 1024px;
-  margin: auto;
-  margin-top: 60px;
-  margin-bottom: 60px;
-  background-color: #9792E3;
-  padding: 40px;
-  color: #331E36;
-}
-
-details {
-  margin-bottom: 40px;
-}
-
-summary {
-  background-color: #9792E3;
-  border-bottom: 1px solid lightgrey;
-}
-
-h2 {
-  display: inline-block;
-  max-width: 100%;
-  word-wrap: break-word;
-}
-
-.input__container {
-  padding-bottom: 5px;
-  border-bottom: 1px solid lightgrey;
-  margin-bottom: 33px;
-}
-
-input, li, .add-btn  {
-  font-size: 18px;
-}
-
-input {
-  background-color: #EDE2B5;
-  border: none;
-  border-radius: 4px;
-}
-
-.plus {
-  position: relative;
-  vertical-align: sub;
-  text-align: center;
-  font-size: 30px;
-  font-weight: 900;
-  background-color: #331E36;
-  color: #9792E3;
-  border-radius: 50%;
-  width: 28px;
-  height: 28px;
-  display: inline-block;
-  bottom: -3px;
-}
-
-.plus span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.instruction {
-  opacity: 0;
-  display: block;
-  margin-left: 32px;
-  font-weight: 700;
-}
-
-.visible {
-  opacity: 1;
-}
-
-.add-btn {
-  display: none;
-  vertical-align: bottom;
-  padding: 0 10px;
-  background-color: #EDE2B5;
-  color: #331E36;
-  border: none;
-  border-radius: 4px;
-}
-
-@media screen and (max-width: 1024px) {
-  .main__container {
-    width: 100%;
-  }
-
-  .add-btn {
-    display: inline-block;
-  }
-
-  .instruction {
-    display: none;
-  }
-
-  .input__container {
-    padding-bottom: 27px;
-  }
-}
-
-@media screen and (max-width: 582px) {
-  .add-btn {
-    margin-top: 30px;
-    display: block;
-  }
-
-  .plus {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 491px) {
-  .user-date {
-    display: block;
-    margin-top: 10px;
-  }
-}
-
-/* Liste */
 ul {
   list-style: none;
 }
 
-li {
-  margin: 10px 0;
-  width: max-content;
-  opacity: 1;
-  transition: opacity 1s;
-  max-width: 100%;
-  word-wrap: break-word;
+
+/* Mix */
+.btn {
+  color: black;
+  margin: 0 10px;
+  font-size: 18px;
+  padding: 0 10px;
 }
 
-li.clicked {
-  opacity: 0;
+.btn--selected {
+  background-color: #511E15;
 }
 
-/* list items span*/
-li span {
+.text--feat {
+  display: block;
+  color: white;
+  font-size: 17px;
+}
+
+.text--desc {
+  color: lightgrey;
+}
+
+.text--rating {
+  font-size: 24px;
+}
+
+.fa-star {
+  color: #FFBD00;
+}
+
+.fa-angle-right,
+.fa-angle-left {
+  font-size: 60px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-angle-right:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(0,0,0,1) 100%);
+}
+
+.fa-angle-left:hover {
+  background: linear-gradient(
+    270deg,
+    rgba(255,255,255,0) 0%,
+    rgba(0,0,0,1) 100%);
+}
+
+/* Typo */
+* {
+  font-family: 'Oswald', sans-serif;
+}
+
+/* Body */
+#app {
+  height: 100vh;
+  background-color: #511E15;
+}
+
+/* Header */
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 30px 15px;
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  z-index: 12;
+  box-shadow: 0 0 10px black;
+}
+
+.logo {
   color: red;
+  font-size: 30px;
+  text-transform: uppercase;
 }
 
-li.clicked span {
-  display: none;
+#title-search,
+.btn {
+  font-size: 20px;
 }
 
-span.check {
-  display: none;
-  color: green;
+/* Main */
+main {
+  overflow: hidden;
+  height: 100%;
 }
 
-li.clicked span.check {
-  display: inline;
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc( 100% - 85px);
+  padding: 26px 0 60px;
+  margin: auto;
+  margin-top: 85px;
+  width: 100%;
+}
+
+.section-container {
+  display: flex;
+  justify-content: space-around;
+  width: calc( 100% - 160px);
+}
+
+.size-container {
+  min-width: 200px;
+  /* margin: 60px 30px 0; */
+  margin: 60px 0;
+  position: relative;
+  display: inline-block;
+}
+
+.size-container::before {
+  content: "";
+  display: block;
+  padding-top: 150%;  /*What you want the height to be in relation to the width*/
+}
+
+.movie-container {
+  box-shadow: 2px 2px 10px black;
+  border: 4px solid white;
+  width: 100%;
+  transition: all 0.8s;
+  transform: scale(1);
+  position: absolute;
+  bottom: 0;
+}
+
+.movie-container:hover {
+  margin: 60px 0 0;
+  z-index: 1024;
+  transform: scale(1.5);
+}
+
+.movie-container:hover .movie-data {
+  opacity: 1;
+}
+
+.img--poster {
+  vertical-align: bottom;
+  width: 100%;
+  transition: width 0.8s;
+}
+
+.section-title {
+  font-size: 60px;
+  margin-top: 40px;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 -15px 10px -15px black;
+  text-shadow: 1px 1px 4px black;
+}
+
+.movie-data {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: opacity 0.8s;
+  color: lightgrey;
+  padding: 40px 15px;
+  overflow-y: auto;
+}
+
+.poster-null {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.poster-null__title,
+.poster-null__error {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.poster-null__title {
+  font-size: 30px;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.poster-null__error {
+  font-size: 20px;
+  color: lightgrey;
+}
+
+.poster-null__placeholder {
+  width: 100%;
+}
+
+.pages-container {
+  width: 100%;
+}
+
+.pages {
+  width: max-content;
+  max-width: 100%;
+  margin: auto;
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 18px;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px;
 }
