@@ -80,16 +80,13 @@
               <div class="movie-card">
                 <img v-if="show.poster_path != null" class="img--poster" :src="'https://image.tmdb.org/t/p/w300' + show.poster_path" alt="show.name">
                 <!-- Se il poster non viene trovato nel db -->
-                <div v-else-if="show.backdrop_path != null" class="poster-null">
-                  <img class="poster-null__placeholder" src="https://via.placeholder.com/300x150/000000/000000?Text=" alt="">
+                <div v-else-if="show.backdrop_path != null" class="poster-null backdrop">
                   <img :src="'https://image.tmdb.org/t/p/w300' + show.backdrop_path" class="img--poster" alt="show.name">
-                  <img class="poster-null__placeholder" src="https://via.placeholder.com/300x150/000000/000000?Text=" alt="">
                 </div>
                 <div v-else class="poster-null">
-                  <img class="poster-null__placeholder" src="https://via.placeholder.com/300x150/000000/000000?Text=" alt="">
                   <span class="poster-null__title">{{ show.name }}</span>
-                  <span class="poster-null__error">Poster non disponibile X</span>
-                  <img class="poster-null__placeholder" src="https://via.placeholder.com/300x150/000000/000000?Text=" alt="">
+                  <span class="poster-null__error">Poster non disponibile</span>
+                  <span class="poster-null__error sm">X</span>
                 </div>
               </div>
               <ul class="movie-data">
