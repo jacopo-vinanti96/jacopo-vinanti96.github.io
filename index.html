@@ -34,16 +34,13 @@
               <div class="movie-card">
                 <img v-if="movie.poster_path != null" class="img--poster" :src="'https://image.tmdb.org/t/p/w300' + movie.poster_path" alt="movie.title">
                 <!-- Se il poster non viene trovato nel db -->
-                <div v-else-if="movie.backdrop_path != null" class="poster-null">
-                  <img class="poster-null__placeholder" src="https://via.placeholder.com/300x150/000000/000000?Text=" alt="">
+                <div v-else-if="movie.backdrop_path != null" class="poster-null backdrop">
                   <img :src="'https://image.tmdb.org/t/p/w300' + movie.backdrop_path" class="img--poster" alt="movie.name">
-                  <img class="poster-null__placeholder" src="https://via.placeholder.com/300x150/000000/000000?Text=" alt="">
                 </div>
                 <div v-else class="poster-null">
-                  <img class="poster-null__placeholder" src="https://via.placeholder.com/300x150/000000/000000?Text=" alt="">
                   <span class="poster-null__title">{{ movie.title }}</span>
-                  <span class="poster-null__error">Poster non disponibile X</span>
-                  <img class="poster-null__placeholder" src="https://via.placeholder.com/300x150/000000/000000?Text=" alt="">
+                  <span class="poster-null__error">Poster non disponibile</span>
+                  <span class="poster-null__error sm">X</span>
                 </div>
               </div>
               <ul class="movie-data">
@@ -53,7 +50,7 @@
                   <i v-for="unit in movie.rating" class="fas fa-star"></i><!--
                     !--><i v-for="unit in ( 5 -  movie.rating )" class="far fa-star"></i>
                   </li>
-                <li class="text--feat">Language:
+                <li class="text--feat">Linguaggio:
                   <img v-if="flags.includes( movie.original_language )" :src="'icons/' + movie.original_language + '.png'" :alt="movie.original_language">
                   <span v-else class="text--desc">{{ movie.original_language }}</span>
                 </li>
@@ -96,7 +93,7 @@
                   <i v-for="unit in show.rating" class="fas fa-star"></i><!--
                     !--><i v-for="unit in ( 5 -  show.rating )" class="far fa-star"></i>
                   </li>
-                <li class="text--feat">Language:
+                <li class="text--feat">Linguaggio:
                   <img v-if="flags.includes( show.original_language )" :src="'icons/' + show.original_language + '.png'" :alt="show.original_language">
                   <span v-else class="text--desc">{{ show.original_language }}</span>
                 </li>
